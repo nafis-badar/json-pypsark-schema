@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .btn-primary {
+        color: #fff;
+        background-color: #10366e;
+        border-color: #060f1c;
+      }
+
+      textarea {
+        /*background: url(http://i.imgur.com/2cOaJ.png);*/
+        background-attachment: local;
+        background-repeat: no-repeat;
+        padding-left: 35px;
+        padding-top: 10px;
+        border-color: #ccc;
+      }
+      .btn-check:active + .btn-primary,
+      .btn-check:checked + .btn-primary,
+      .btn-primary.active,
+      .btn-primary:active,
+      .show > .btn-primary.dropdown-toggle {
+        color: #fff;
+        background-color: #10366e;
+        border-color: #10366e;
+      }
+    </style>
+
+    <title>Schema for PySpark</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <header class="py-3 mb-4 border-bottom">
+        <div class="container d-flex flex-wrap justify-content-center">
+          <a
+            href="/"
+            class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none"
+          >
+            <svg class="bi me-2" width="40" height="32">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+            <div>
+              <h2> Nafis website for conveting json to schema </h2>
+            </div>
+          </a>
+
+          <button class="btn btn-primary" id="btn-generate" type="button">
+            Generate Schema
+          </button>
+
+        </div>
+      </header>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="d-flex bd-highlight">
+            <div class="p-2 flex-grow-1 bd-highlight">
+              <div class="container">
+                <h4 class="fw-bold" contenteditable="true">JSON Input</h4>
+              </div>
+            </div>
+
+            <div class="p-2 bd-highlight">
+              <button
+                class="btn btn-secondary btn-sm"
+                type="button"
+                id="btncopy"
+              >
+              </button>
+            </div>
+            <div class="p-2 bd-highlight">
+              <button
+                class="btn btn-secondary btn-sm"
+                type="button"
+                id="btnformat"
+              >
+              </button>
+            </div>
+          </div>
+          <!--<textarea
+            id="left"
+            style="min-width: 100%; font-family: consolas"
+            class="form-control text-area"
+            spellcheck="false"
+            rows="20"
+          ></textarea>-->
+          <div
+            class="shadow"
+            id="container"
+            style="min-width: 100%; height: 500px; border: 1px solid grey"
+          ></div>
+          <small>Created by ChatGPT and Nafis </small><br>
+        </div>
+        <div class="col-md-6">
+          <div class="d-flex bd-highlight">
+            <div class="p-2 flex-grow-1 bd-highlight">
+              <div class="container">
+                <h4 class="fw-bold" contenteditable="true">PySpark Schema</h4>
+              </div>
+            </div>
+
+            <div class="p-2 bd-highlight">
+              <button
+                class="btn btn-secondary btn-sm"
+                type="button"
+                id="btncopy2"
+              >
+                Copy
+              </button>
+            </div>
+            <div class="p-2 bd-highlight">
+              <button
+                class="btn btn-secondary btn-sm"
+                type="button"
+                id="btnoutput_format"
+              >
+                Format
+              </button>
+            </div>
+          </div>
+          <div
+            class="shadow"
+            id="output_container"
+            style="min-width: 100%; height: 500px; border: 1px solid grey"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="{% static '/loader.js' %}"></script>
+    <script src="{% static '/logic.js' %}"></script>
+
+  </body>
+</html>
